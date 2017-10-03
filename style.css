@@ -1,5 +1,59 @@
 /* main stylesheet for the wausoft website */
-
 html {
-    font-family: 'Fira Sans', sans-serif;
-}
+  font-family: 'Fira Sans', sans-serif; }
+
+body {
+  margin: 0; }
+
+.logo {
+  color: #009edf; }
+
+.body {
+  margin: 0 32px 0 32px; }
+
+.box {
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  border-radius: 16px;
+  border-color: black;
+  border-style: dotted;
+  padding: 16px; }
+
+.warning {
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  border-radius: 16px;
+  border-style: solid;
+  border-color: #f78222;
+  padding: 8px;
+  background-color: #fcb827; }
+
+p {
+  margin: 0; }
+
+h1, h2, h3, h4 {
+  margin-bottom: 0; }
+
+#caption {
+  margin: 0; }
+
+/** Navigation Bar **/
+nav {
+  top: 0;
+  background-color: #009edf;
+  color: white;
+  font-weight: bold;
+  padding: 8px; }
+  nav a {
+    text-decoration: none;
+    font-weight: normal; }
+  nav a:visited {
+    color: white; }
+  nav a:hover {
+    text-decoration: underline; }
+
+/** Footer **/
+footer {
+  color: #aaa; }

@@ -7,13 +7,14 @@ $wau-red:    #e2373f;
 $wau-purple: #953c96;
 $wau-blue:   #009edf;
 
+$light-gray: #eee;
 $faded-gray: #aaa;
+$shadow: #ccc;
+
+$border-radius: 8px;
 
 @mixin round-corners($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius:    $radius;
-    -ms-border-radius:     $radius;
-    border-radius:         $radius;
+    border-radius: $radius;
 }
 
 html {
@@ -22,6 +23,7 @@ html {
 
 body {
     margin: 0;
+    background-color: $light-gray;
 }
 
 .logo {
@@ -33,14 +35,19 @@ body {
 }
 
 .box {
-    @include round-corners(16px);
-    border-color: black;
-    border-style: dotted;
+    @include round-corners($border-radius);
+    box-shadow: 10px 10px 8px $shadow;
+    /*
+    border-color: $faded-gray;
+    border-style: solid;
+    border-width: 2px;
+   */
+    background-color: white;
     padding: 16px;
 }
 
 .warning {
-    @include round-corners(16px);
+    @include round-corners($border-radius);
     border-style: solid;
     border-color: $wau-orange;
     padding: 8px;
@@ -57,6 +64,10 @@ h1, h2, h3, h4 {
 
 #caption {
     margin: 0;
+}
+
+#github {
+    float: right;
 }
 
 /** Navigation Bar **/

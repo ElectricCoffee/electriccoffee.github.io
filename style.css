@@ -3,7 +3,8 @@ html {
   font-family: 'Fira Sans', sans-serif; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  background-color: #eee; }
 
 .logo {
   color: #009edf; }
@@ -12,19 +13,18 @@ body {
   margin: 0 32px 0 32px; }
 
 .box {
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  -ms-border-radius: 16px;
-  border-radius: 16px;
-  border-color: black;
-  border-style: dotted;
+  border-radius: 8px;
+  box-shadow: 10px 10px 8px #ccc;
+ /*
+ border-color: $faded-gray;
+ border-style: solid;
+ border-width: 2px;
+*/
+  background-color: white;
   padding: 16px; }
 
 .warning {
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  -ms-border-radius: 16px;
-  border-radius: 16px;
+  border-radius: 8px;
   border-style: solid;
   border-color: #f78222;
   padding: 8px;
@@ -38,6 +38,9 @@ h1, h2, h3, h4 {
 
 #caption {
   margin: 0; }
+
+#github {
+  float: right; }
 
 /** Navigation Bar **/
 nav {
@@ -57,3 +60,5 @@ nav {
 /** Footer **/
 footer {
   color: #aaa; }
+
+/*# sourceMappingURL=style.css.map */

@@ -59,6 +59,9 @@ nav {
 
 /** Footer **/
 footer {
-  color: #aaa; }
+    color: #aaa; }
+
+td, th {
+    padding-right: 15px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,6 +11,11 @@ function getHours(current) {
 }
 
 function getOrdinal(num) {
+  // annoying special case
+  if (num == 11 || num == 12 || num == 13) {
+    return num + "th";
+  }
+
   let finalDigit = num % 10;
   switch (finalDigit) {
     case 1:

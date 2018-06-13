@@ -6,6 +6,10 @@ if (params.has("days")) {
   totalDays = parseInt(params.get("days"));
 }
 
+if (params.has("start")) {
+    currentDay = parseFloat(params.get("start") - 1);
+}
+
 function getHours(current) {
   return (totalDays - current) * 24
 }

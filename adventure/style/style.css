@@ -1,0 +1,17 @@
+html {
+  font-family: 'Fira Sans', sans-serif; }
+
+#input-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap; }
+  #input-bar input {
+    width: 90%; }
+  #input-bar button {
+    width: 8%; }
+
+#textbox {
+  color: white; }
+
+/*# sourceMappingURL=style.css.map */

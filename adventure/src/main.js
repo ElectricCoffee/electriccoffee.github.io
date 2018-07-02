@@ -13,7 +13,7 @@ const page = document.body;
 
 /** Event Hooks **/
 inputbox.addEventListener("keydown", onEnter);
-goButton.addEventListener("mousedown", readInput);
+goButton.addEventListener("mousedown", readEvalPrint);
 
 textbox.innerHTML = "Testing 123";
 page.style.backgroundImage = "url(image.jpg)";
@@ -22,12 +22,12 @@ page.style.backgroundSize = "100%";
 /** Event Handlers **/
 function onEnter(event) {
     if (event.key === "Enter") {
-        readInput();
+        readEvalPrint();
     }
 }
 
 /** Other Functions **/
-function readInput() {
+function readEvalPrint() {
     textbox.innerHTML = inputbox.value;
     inputbox.value = "";
 }

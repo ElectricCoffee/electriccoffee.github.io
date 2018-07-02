@@ -22,10 +22,10 @@ export class Map {
     }
 
     // adds a room to the map
-    addRoom(room, x, y) {
-        checkBounds(x, y, this);
+    addRoom(room) {
+        checkBounds(room.x, room.y, this);
 
-        this.playArea[x][y] = room;
+        this.playArea[room.x][room.y] = room;
     }
 
     getRoom(x, y) {

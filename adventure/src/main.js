@@ -5,6 +5,13 @@ import {rooms} from "./rooms.js"
 
 const map = new Map(4, 4);
 
+// add all the rooms to the map
+try {
+    rooms.forEach((r) => map.addRoom(r));
+} catch (e) {
+    alert(e);
+}
+
 /** DOM objects **/
 const textbox = document.getElementById("textbox");
 const inputbox = document.getElementById("input-box");

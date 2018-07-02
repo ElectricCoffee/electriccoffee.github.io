@@ -1,3 +1,10 @@
+"use strict";
+
+import {Map} from "./map.js";
+import {rooms} from "./rooms.js"
+
+const map = new Map(4, 4);
+
 /** DOM objects **/
 const textbox = document.getElementById("textbox");
 const inputbox = document.getElementById("input-box");

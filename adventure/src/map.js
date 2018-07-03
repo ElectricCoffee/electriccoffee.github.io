@@ -21,7 +21,7 @@ export class Map {
         }
     }
 
-    // adds a room to the map
+    /** Adds a room to the map */
     addRoom(room) {
         var {x, y} = room.position;
         checkBounds(x, y, this);
@@ -29,6 +29,7 @@ export class Map {
         this.playArea[x][y] = room;
     }
 
+    /** Retreives a room in the current position */
     getRoom(x, y) {
         checkBounds(x, y, this);
 

@@ -23,10 +23,14 @@ export class Map {
 
     /** Adds a room to the map */
     addRoom(room) {
-        var {x, y} = room.position;
+        let {x, y} = room.position;
         checkBounds(x, y, this);
 
         this.playArea[x][y] = room;
+
+        if (room.startingRoom) {
+            this.currentRoom = room;
+        }
     }
 
     /** Retreives a room in the current position */

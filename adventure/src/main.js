@@ -23,8 +23,9 @@ const page = document.body;
 inputbox.addEventListener("keydown", onEnter);
 goButton.addEventListener("mousedown", readEvalPrint);
 
-textbox.innerHTML = "Testing 123";
-page.style.backgroundImage = "url(image.jpg)";
+textbox.innerHTML = map.currentRoom.description.join("<br/>");
+exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");
+page.style.backgroundImage = `url(${map.currentRoom.image})`;
 page.style.backgroundSize = "100%";
 
 /** Event Handlers **/

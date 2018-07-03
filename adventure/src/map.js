@@ -39,4 +39,30 @@ export class Map {
 
         this.playArea[x][y];
     }
+
+    /** Moves the player to the room indicated by the direction */
+    move(direction) {
+        let {x, y} = this.currentRoom.position;
+        
+        // also covers the switch's default case
+        if (!this.currentRoom.connections.includes(direction)) {
+            throw new Error(`The direction "${direction}" is not a valid connection`);
+        }
+        
+        // note: y increases southward, x increases eastward
+        switch (direction.toLowerCase()) {
+            case "north":
+                this.currentRoom = this.playArea[x][y - 1];
+                break;
+            case "south":
+                this.currentRoom = this.playArea[x][y + 1];
+                break;
+            case "east":
+                this.currentRoom = this.playArea[x + 1][y];
+                break;
+            case "west":
+                this.currentRoom = this.playArea[x - 1][y];
+                break;
+        }
+    }
 }

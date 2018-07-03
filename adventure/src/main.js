@@ -1,7 +1,7 @@
 "use strict";
 
 import {Map} from "./map.js";
-import {rooms} from "./rooms.js"
+import {rooms} from "../rooms/rooms.js"
 
 const map = new Map(4, 4);
 

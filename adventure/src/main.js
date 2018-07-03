@@ -14,6 +14,7 @@ try {
 
 /** DOM objects **/
 const textbox = document.getElementById("textbox");
+const exits = document.getElementById("exits");
 const inputbox = document.getElementById("input-box");
 const goButton = document.getElementById("go-btn");
 const page = document.body;

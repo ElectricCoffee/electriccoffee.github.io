@@ -1,17 +1,25 @@
 html {
-  font-family: 'Fira Sans', sans-serif; }
+  font-family: 'Fira Sans', sans-serif;
+}
 
 #input-bar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  white-space: nowrap; }
-  #input-bar input {
-    width: 90%; }
-  #input-bar button {
-    width: 8%; }
+  white-space: nowrap;
+}
 
-#textbox {
-  color: white; }
+#input-bar input {
+  width: 90%;
+}
 
+#input-bar button {
+  width: 8%;
+}
+
+p {
+  color: white;
+  text-align: center;
+  font-size: 14pt;
+}
 /*# sourceMappingURL=style.css.map */

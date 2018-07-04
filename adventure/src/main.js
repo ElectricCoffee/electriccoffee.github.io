@@ -6,7 +6,7 @@ console.log("You can also fork it on github! @ github.com/ElectricCoffee/electri
 
 import {Map} from "./map.js";
 import {Parser} from "./parser.js";
-import {rooms} from "../rooms/rooms.js";
+import {rooms} from "../data/rooms.js";
 
 const map = new Map(4, 4);
 

@@ -1,5 +1,9 @@
 "use strict";
 
+console.log("I see you're snooping around in my code, how dare you!");
+console.log("Well, since you're here, please leave me some feedback on the code");
+console.log("You can also fork it on github! @ github.com/ElectricCoffee/electriccoffee.github.io");
+
 import {Map} from "./map.js";
 import {Parser} from "./parser.js";
 import {rooms} from "../rooms/rooms.js";

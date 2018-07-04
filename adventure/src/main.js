@@ -31,6 +31,8 @@ const actions = {
     help: _ => alert("This is a test"),
     go: x => {map.move(x[0]); reloadRoom()},
     move: x => {map.move(x[0]); reloadRoom()},
+    look: x => alert(`looking for ${x} is not yet implemented`),
+    take: x => alert(`taking ${x} is not yet implemented`),
 };
 
 /** Event Hooks **/

@@ -1,25 +1,16 @@
 export class Parser {
-    static parseInput(str) {
+    static parseInput(str, actions) {
         let tokens = str.split(/\s/).filter(s => s != "").map(s => s.trim());
+        let command = tokens.shift(); // pops the 1st item
 
-
-        switch (tokens[0].toLowerCase()) {
-            case "help":
-                break;
-            case "go":
-            case "move":
-                // figure out what to do here;
-                break;
-            case "look":
-                if (tokens.length > 1) {
-                    // figure out what to do here
-                }
-
-                // and here
-                break;
-            default: 
-                throw new Error(`Did not understand command ${tokens[0]}`);
+        if (!(command in actions)) {
+            throw new Error(`Did not understand the command "${command}"`);
         }
+
+        // return the function in the actions object with the remaining tokens as its arguments
+        // it's not the responsibility of the parser to call the code, but the caller of the parser
+        // thus a thunk is returned.
+        return () => actions[command](tokens);
     }
 
     /** Parses a description, replacing all ocurrences of @ with <span> tags */

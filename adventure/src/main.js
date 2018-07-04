@@ -16,12 +16,10 @@ try {
 const textbox = document.getElementById("textbox");
 const exits = document.getElementById("exits");
 const inputbox = document.getElementById("input-box");
-const goButton = document.getElementById("go-btn");
 const page = document.body;
 
 /** Event Hooks **/
 inputbox.addEventListener("keydown", onEnter);
-goButton.addEventListener("mousedown", readEvalPrint);
 
 textbox.innerHTML = map.currentRoom.description.join("<br/>");
 exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");

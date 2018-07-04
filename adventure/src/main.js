@@ -58,10 +58,10 @@ function readEvalPrint() {
 }
 
 function reloadRoom() {
-    textbox.innerHTML = Parser.parseDescription(map.currentRoom.description.join("<br/>"));
-    exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");
     page.style.backgroundImage = `url(${map.currentRoom.image})`;
     page.style.backgroundSize = "100%";
+    textbox.innerHTML = Parser.parseDescription(map.currentRoom.description.join("<br/>"));
+    exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");
 }
 
 reloadRoom();

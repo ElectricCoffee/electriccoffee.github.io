@@ -22,11 +22,6 @@ const page = document.body;
 /** Event Hooks **/
 inputbox.addEventListener("keydown", onEnter);
 
-textbox.innerHTML = Parser.parseDescription(map.currentRoom.description.join("<br/>"));
-exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");
-page.style.backgroundImage = `url(${map.currentRoom.image})`;
-page.style.backgroundSize = "100%";
-
 /** Event Handlers **/
 function onEnter(event) {
     if (event.key === "Enter") {
@@ -39,3 +34,12 @@ function readEvalPrint() {
     textbox.innerHTML = inputbox.value;
     inputbox.value = "";
 }
+
+function reloadRoom() {
+    textbox.innerHTML = Parser.parseDescription(map.currentRoom.description.join("<br/>"));
+    exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");
+    page.style.backgroundImage = `url(${map.currentRoom.image})`;
+    page.style.backgroundSize = "100%";
+}
+
+reloadRoom();

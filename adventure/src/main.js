@@ -23,6 +23,16 @@ const exits = document.getElementById("exits");
 const inputbox = document.getElementById("input-box");
 const page = document.body;
 
+/** Possible actions the user may perform 
+ *  It's meant as a dictionary that maps strings to functions that take a list of strings
+ *  In C# types this would be a Dictionary<string, Action<List<string>>>
+*/
+const actions = {
+    help: _ => alert("This is a test"),
+    go: x => {map.move(x[0]); reloadRoom()},
+    move: x => {map.move(x[0]); reloadRoom()},
+};
+
 /** Event Hooks **/
 inputbox.addEventListener("keydown", onEnter);
 

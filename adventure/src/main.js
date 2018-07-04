@@ -45,8 +45,16 @@ function onEnter(event) {
 
 /** Other Functions **/
 function readEvalPrint() {
-    textbox.innerHTML = inputbox.value;
-    inputbox.value = "";
+    let input = inputbox.value;
+    
+    try {
+        let action = Parser.parseInput(input, actions);
+        action();
+    } catch (e) {
+        alert(e);
+    } finally {
+        inputbox.value = "";
+    }
 }
 
 function reloadRoom() {

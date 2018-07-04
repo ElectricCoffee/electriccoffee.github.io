@@ -1,13 +1,14 @@
 "use strict";
 
 import {Map} from "./map.js";
-import {rooms} from "../rooms/rooms.js"
+import {Parser} from "./parser.js";
+import {rooms} from "../rooms/rooms.js";
 
 const map = new Map(4, 4);
 
 // add all the rooms to the map
 try {
-    rooms.forEach((r) => map.addRoom(r));
+    rooms.forEach(r => map.addRoom(r));
 } catch (e) {
     alert(e);
 }
@@ -21,7 +22,7 @@ const page = document.body;
 /** Event Hooks **/
 inputbox.addEventListener("keydown", onEnter);
 
-textbox.innerHTML = map.currentRoom.description.join("<br/>");
+textbox.innerHTML = Parser.parseDescription(map.currentRoom.description.join("<br/>"));
 exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");
 page.style.backgroundImage = `url(${map.currentRoom.image})`;
 page.style.backgroundSize = "100%";

@@ -1,0 +1,10 @@
+export const items = 
+    [ { id: 0
+      , name: "wrench"
+      , description: "A large and heavy pipe wrench. Definitely heavy enough to hit with."
+      }
+    , { id: 0
+      , name: "small key"
+      , description: "A small skeleton key that has blackened with age. I wonder what it's for."
+      }
+    ]

@@ -1,3 +1,16 @@
+$highlight: #68d4ff;
+$box-color: #222;
+
+@mixin large-text {
+    font-size: 14pt;
+    color: white;
+}
+
+@mixin no-frills {
+    background: transparent;
+    border: none;
+}
+
 html {
     font-family: 'Fira Sans', sans-serif;
 }
@@ -5,20 +18,24 @@ html {
 #input-bar {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%; 
-    white-space: nowrap;
-
+    background: rgba($box-color, 0.5);
+    
     input {
-        width: 90%;
-    }
-
-    button {
-        width: 8%;
+        width: 100%;
+        @include large-text();
+        @include no-frills();
+        margin: 10px;
     }
 }
 
+.item {
+    color: $highlight;
+    text-decoration: underline;
+}
+
 p {
-    color: white;
     text-align: center;
-    font-size: 14pt;
+    @include large-text();
 }

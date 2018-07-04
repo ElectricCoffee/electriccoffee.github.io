@@ -5,21 +5,28 @@ html {
 #input-bar {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  white-space: nowrap;
+  background: rgba(34, 34, 34, 0.5);
 }
 
 #input-bar input {
-  width: 90%;
+  width: 100%;
+  font-size: 14pt;
+  color: white;
+  background: transparent;
+  border: none;
+  margin: 10px;
 }
 
-#input-bar button {
-  width: 8%;
+.item {
+  color: #68d4ff;
+  text-decoration: underline;
 }
 
 p {
-  color: white;
   text-align: center;
   font-size: 14pt;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

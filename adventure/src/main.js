@@ -6,7 +6,7 @@ console.log("You can also fork it on github! @ github.com/ElectricCoffee/electri
 
 import {Map} from "./map.js";
 import {Parser} from "./parser.js";
-import {rooms} from "../data/rooms.js";
+import {rooms, Room} from "../data/rooms.js";
 
 const map = new Map(4, 4);
 
@@ -62,7 +62,7 @@ function readEvalPrint() {
 function reloadRoom() {
     page.style.backgroundImage = `url(${map.currentRoom.image})`;
     page.style.backgroundSize = "100%";
-    textbox.innerHTML = Parser.parseDescription(map.currentRoom.description.join("<br/>"));
+    textbox.innerHTML = Parser.parseDescription(Room.mkHTMLDescription(map.currentRoom));
     exits.innerHTML = "Possible exits are: " + map.currentRoom.connections.join(", ");
 }
 

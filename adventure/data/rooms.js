@@ -19,3 +19,9 @@ export const rooms =
     , image: "rooms/image.jpg"
     }
   ];
+
+  export class Room {
+    static mkHTMLDescription(room) {
+      return room.description.join("<br/>");
+    }
+  }

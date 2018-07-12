@@ -1,4 +1,6 @@
-function checkBounds(x, y, map) {
+import {Room, Direction} from "../data/rooms";
+
+function checkBounds(x: number, y: number, map: Map) {
     if (x >= map.width) {
         throw new Error(`Error: ${x} is too large to fit in an array of width ${map.width}`);
     } else if (y >= map.height) {
@@ -8,21 +10,23 @@ function checkBounds(x, y, map) {
 
 export class Map {
     // initialise internal 2D array with null-values
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-        this.playArea = []
+    private playArea: Array<Array<Room | undefined>>;
+
+    public currentRoom?: Room;
+
+    constructor(public width: number, public height: number) {
+        this.playArea = new Array();
 
         for (let h = 0; h < height; h++) {
-            this.playArea[h] = []
+            this.playArea.push(new Array());
             for (let w = 0; w < width; w++) {
-                this.playArea[h][w] = null;
+                this.playArea[h].push(undefined);
             }
         }
     }
 
     /** Adds a room to the map */
-    addRoom(room) {
+    addRoom(room: Room) {
         let {x, y} = room.position;
         checkBounds(x, y, this);
 
@@ -34,14 +38,28 @@ export class Map {
     }
 
     /** Retreives a room in the current position */
-    getRoom(x, y) {
+    getRoom(x: number, y: number) {
         checkBounds(x, y, this);
 
         this.playArea[x][y];
     }
 
+    private static validateRoom(room: Room | undefined): Room {
+        if (room === undefined) {
+            throw new Error("Cannot move to undefined");
+        }
+
+        return room;
+    }
+
     /** Moves the player to the room indicated by the direction */
-    move(direction) {
+    move(direction: Direction) {
+        let nextRoom = undefined;
+
+        if (this.currentRoom === undefined) {
+            throw new Error(`Cannot move. It is unknown which room you are currently in.`)
+        }
+
         let {x, y} = this.currentRoom.position;
         
         // also covers the switch's default case
@@ -52,18 +70,20 @@ export class Map {
         // note: y increases southward, x increases eastward
         switch (direction.toLowerCase()) {
             case "north":
-                this.currentRoom = this.playArea[x][y - 1];
+                nextRoom = this.playArea[x][y - 1];
                 break;
             case "south":
-                this.currentRoom = this.playArea[x][y + 1];
+                nextRoom = this.playArea[x][y + 1];
                 break;
             case "east":
-                this.currentRoom = this.playArea[x + 1][y];
+                nextRoom = this.playArea[x + 1][y];
                 break;
             case "west":
-                this.currentRoom = this.playArea[x - 1][y];
+                nextRoom = this.playArea[x - 1][y];
                 break;
         }
+
+        this.currentRoom = Map.validateRoom(nextRoom);
     }
 }
 

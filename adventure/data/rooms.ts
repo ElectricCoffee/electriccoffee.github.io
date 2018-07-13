@@ -24,6 +24,13 @@ export const rooms: Room[] = [
 
 export type Direction = "north" | "south" | "east" | "west";
 
+export namespace Direction {
+  /** Checks if the input string is a valid direction */
+  export function isValid(str: string): boolean {
+    return str === "north" || str === "south" || str === "east" || str === "west";
+  }
+}
+
 export interface Room {
   id: number,
   description: string | string[],

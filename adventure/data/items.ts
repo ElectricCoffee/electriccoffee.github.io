@@ -10,14 +10,14 @@ export interface Item {
 export const items: Item[] = [ 
   { 
     id: 0, 
-    name: "wrench", 
     kind: "tool",
+    name: "wrench", 
     description: "A large and heavy pipe wrench. Definitely heavy enough to hit with."
   }, 
   { 
     id: 1, 
-    name: "small key", 
     kind: "key",
+    name: "small key", 
     description: "A small skeleton key that has blackened with age. I wonder what it's for."
   }
 ];

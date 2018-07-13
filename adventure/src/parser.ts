@@ -5,8 +5,9 @@ export interface Actions {
     [id: string]: Action 
 }
 
-export class Parser {
-    static parseInput(str: string, actions: Actions) {
+
+export namespace Parser {
+    export function parseInput(str: string, actions: Actions) {
         let tokens = str.split(/\s/).filter(s => s != "").map(s => s.trim());
         let command = tokens.shift(); // pops the 1st item
 
@@ -25,7 +26,7 @@ export class Parser {
     }
 
     /** Parses a description, replacing all ocurrences of @ with <span> tags */
-    static parseDescription(desc: string): string {
+    export function parseDescription(desc: string): string {
         return desc.replace(/@(\w+)/gi, '<span class="item">$1</span>');
     }
 }

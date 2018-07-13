@@ -1,5 +1,6 @@
-export class Parser {
-    static parseInput(str, actions) {
+export var Parser;
+(function (Parser) {
+    function parseInput(str, actions) {
         let tokens = str.split(/\s/).filter(s => s != "").map(s => s.trim());
         let command = tokens.shift(); // pops the 1st item
         if (command == undefined) {
@@ -13,8 +14,10 @@ export class Parser {
         // thus a thunk is returned.
         return () => actions[command](tokens);
     }
+    Parser.parseInput = parseInput;
     /** Parses a description, replacing all ocurrences of @ with <span> tags */
-    static parseDescription(desc) {
+    function parseDescription(desc) {
         return desc.replace(/@(\w+)/gi, '<span class="item">$1</span>');
     }
-}
+    Parser.parseDescription = parseDescription;
+})(Parser || (Parser = {}));

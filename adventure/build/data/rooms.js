@@ -21,6 +21,14 @@ export const rooms = [
         image: "rooms/image.jpg"
     }
 ];
+export var Direction;
+(function (Direction) {
+    /** Checks if the input string is a valid direction */
+    function isValid(str) {
+        return str === "north" || str === "south" || str === "east" || str === "west";
+    }
+    Direction.isValid = isValid;
+})(Direction || (Direction = {}));
 export var Room;
 (function (Room) {
     function mkHTMLDescription({ description }) {

@@ -5,7 +5,6 @@ export interface Actions {
     [id: string]: Action 
 }
 
-
 export namespace Parser {
     export function parseInput(str: string, actions: Actions) {
         let tokens = str.split(/\s/).filter(s => s != "").map(s => s.trim());

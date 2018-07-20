@@ -42,7 +42,7 @@ export interface Room {
 }
 
 export namespace Room {
-  export function mkHTMLDescription({description}: Room) {
+  export function mkHTMLDescription({description}: Room): string {
     if (Array.isArray(description)) {
       return description.join("<br/>");
     } else {

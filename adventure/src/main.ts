@@ -24,8 +24,7 @@ const inputbox = document.getElementById("input-box") as HTMLInputElement;
 const page = document.body;
 
 /** Possible actions the user may perform 
- *  It's meant as a dictionary that maps strings to functions that take a list of strings
- *  In C# types this would be a Dictionary<string, Action<List<string>>>
+ *  A Map could've been used here, but honestly this method is cleaner both in terms of lookup and in terms of writing it
 */
 const actions: Actions = {
     help: _ => alert(`Possible commands: ${Object.keys(actions).join(", ")}`),

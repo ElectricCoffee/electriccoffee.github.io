@@ -1,46 +1,57 @@
 /* main stylesheet for the wausoft website */
 html {
-  font-family: 'Fira Sans', sans-serif; }
+  font-family: 'Fira Sans', sans-serif;
+}
 
 body {
   margin: 0;
-  background-color: #eee; }
+  background-color: #eee;
+}
 
 .logo {
-  color: #009edf; }
+  color: #009edf;
+}
 
 .body {
-  margin: 0 32px 0 32px; }
+  margin: 0 32px 0 32px;
+}
 
 .box {
   border-radius: 8px;
-  box-shadow: 10px 10px 8px #ccc;
- /*
- border-color: $faded-gray;
- border-style: solid;
- border-width: 2px;
-*/
+  -webkit-box-shadow: 10px 10px 8px #ccc;
+          box-shadow: 10px 10px 8px #ccc;
+  /*
+    border-color: $faded-gray;
+    border-style: solid;
+    border-width: 2px;
+   */
   background-color: white;
-  padding: 16px; }
+  padding: 16px;
+}
 
 .warning {
   border-radius: 8px;
   border-style: solid;
   border-color: #f78222;
   padding: 8px;
-  background-color: #fcb827; }
+  background-color: #fcb827;
+}
 
 p {
-  margin: 0; }
+  margin: 0;
+}
 
 h1, h2, h3, h4 {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 #caption {
-  margin: 0; }
+  margin: 0;
+}
 
 #github {
-  float: right; }
+  float: right;
+}
 
 /** Navigation Bar **/
 nav {
@@ -48,20 +59,29 @@ nav {
   background-color: #009edf;
   color: white;
   font-weight: bold;
-  padding: 8px; }
-  nav a {
-    text-decoration: none;
-    font-weight: normal; }
-  nav a:visited {
-    color: white; }
-  nav a:hover {
-    text-decoration: underline; }
+  padding: 8px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+nav a:visited {
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
 
 /** Footer **/
 footer {
-    color: #aaa; }
+  color: #aaa;
+}
 
 td, th {
-    padding-right: 15px; }
-
+  padding-right: 15px;
+}
 /*# sourceMappingURL=style.css.map */
